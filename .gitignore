@@ -1,0 +1,22 @@
+# Local environment variables
+.env
+
+# Logs
+logs
+*.log
+
+*.swp
+*.swo
+
+contracts/.placeholder
+test/.placeholder
+
+# Truffle build directory
+build/
+
+# Dependency directory
+node_modules/
+
+*.key
+.node-xmlhttprequest-*
+
