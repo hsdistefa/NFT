@@ -1,0 +1,19 @@
+{
+    "name": "First VRF NFT",
+    "description": "Simple Chainlink VRF NFT",
+    "image": "https://ipfs.io/ipfs/QmSnS8Ti5FEgHX5XXfoof2rPHPkSPd7usdJTqU6yhxMyov?filename=Tulip.jpg",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 60
+        },
+        {
+            "trait_type": "Speed",
+            "value": 0
+        },
+        {
+            "trait_type": "Stamina",
+            "value": 15
+        }
+    ]
+}
