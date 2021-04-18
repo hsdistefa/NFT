@@ -2,9 +2,10 @@ pragma solidity ^0.6.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@chainlink/contracts/src/v0.6/VRFConsumerBase.sol";
+import "./PriceConsumerV3.sol" as priceConsumer;
 
 
-contract NFTSimple is ERC721, VRFConsumerBase {
+contract NFTSimple is ERC721, VRFConsumerBase, priceConsumer.PriceConsumerV3 {
 
     // For working with Chainlink VRF
     bytes32 public keyHash;
@@ -24,6 +25,7 @@ contract NFTSimple is ERC721, VRFConsumerBase {
         uint256 strength;
         uint256 speed;
         uint256 stamina;
+        int price;
         string name;
     }
 
@@ -49,12 +51,14 @@ contract NFTSimple is ERC721, VRFConsumerBase {
         uint256 strength = (randomNumber % 100);
         uint256 speed = ((randomNumber % 10000) / 100);
         uint256 stamina = ((randomNumber % 1000000) / 10000);
+        int price = getThePrice();
 
         characters.push(
             Character(
                 strength,
                 speed,
                 stamina,
+                price,
                 requestToCharacterName[requestId]
             )
         );
